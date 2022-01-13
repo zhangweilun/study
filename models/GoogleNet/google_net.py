@@ -27,3 +27,7 @@ class Inception(nn.Module):
         p4 = F.relu(self.p4_2(self.p4_1(x)))
         # 在通道维度上连结输出
         return torch.cat((p1, p2, p3, p4), dim=1)
+
+b1 = nn.Sequential(nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3),
+                   nn.ReLU(),
+                   nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
